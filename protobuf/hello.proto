@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+// 生成的go代码包名
+option go_package = "./;hello";
+
+// 服务名
+service Greeter {
+  // 定义一个接口：SayHello
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+// 请求参数
+message HelloRequest {
+  string name = 1;
+}
+
+// 返回结果
+message HelloReply {
+  string message = 1;
+}

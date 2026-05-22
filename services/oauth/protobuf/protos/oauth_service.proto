@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "demo04/services/oauth/protobuf/pb";
+
+service OauthService {
+  rpc Login(LoginRequest) returns (LoginResponse){}
+}
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+    string userKey = 3;
+}
+message LoginResponse {
+    string userKey = 1;
+    string accessToken = 2;
+}
